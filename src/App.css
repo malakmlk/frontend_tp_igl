@@ -5,13 +5,35 @@
 
 }
 .landing-grid{
-  background: #43C6AC;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #191654, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #191654, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #948E99;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2E1437, #948E99);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2E1437, #948E99); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 .avatar-img {
   height: 250px;
   padding-top: 5em;
 }
+.list-form{
+        position: absolute; /* postulat de départ */
+        top: 50%; left: 50%; /* à 50%/50% du parent référent */
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+}
+.bt-form
+{
+          padding-left:4px;
+          padding-right:2px;
+          padding-top:4px;
+          padding-bottom:2px;
+          border-style:inset;
+}
+.Center
+{
+  text-align: center;
+  align-items: center;
+
+}
+
 

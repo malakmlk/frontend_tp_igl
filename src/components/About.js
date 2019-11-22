@@ -7,7 +7,7 @@ class About extends Component {
     {
         return(
             <div style={{width: '100%', margin: 'auto'}}>
-           
+              <h1>about</h1>
             </div>
         )
 }
