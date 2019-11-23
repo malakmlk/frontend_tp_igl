@@ -10,8 +10,8 @@ const Main = () => (
     <Switch>
        
        <Route exact path="/" component={LandingPage} ></Route>
-       <Route  path="/"  component={Note} ></Route>
        <Route  path="/"  component={Form} ></Route>
+       <Route  path="/"  component={Note} ></Route>
         
        
         

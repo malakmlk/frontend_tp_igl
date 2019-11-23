@@ -19,13 +19,6 @@ class App extends Component {
         </Header>
         <Drawer  >
             <Navigation >
-            <img
-                 src="https://icon-library.net/images/administration-icon/administration-icon-5.jpg"
-                 alt="avatar"
-                 className="avatar-img"
-                  
-                 >
-                </img>
               <Link to="/About">About</Link>
               <Link to="/Form">Form</Link>
               <Link to="/landingPage">landingPage</Link>
