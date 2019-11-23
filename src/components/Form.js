@@ -4,11 +4,13 @@ import { Card,CardText,CardTitle,CardActions, Textfield,ListItem,Button } from '
 export class Form extends Component {
   render() {
     return (
-      <div className="list-form"style={{fontFamily:''}} >
-          <Card shadow={10} style={{width: '700px', height: '880px',pandding:"10",marginTop:'350px',marginBottom:'100px'}}>
-            <CardTitle expand style={{textDecoration: 'double', padding:"0px",marginLeft:"0px",textDecorationStyle:"italic",flexGrow:'0',marginLeft:'15px',marginTop:"50px",marginBottom:"35px"}}> Demande changement groupe</CardTitle>
+      <div className="list-form" >
+          <Card shadow={10} style={{width: '700px', height: '990px',pandding:"10",marginTop:'450px',marginBottom:'90px'}}>
+            <CardTitle  expand style={{textDecoration: 'double', padding:"0px",marginLeft:"0px",textDecorationStyle:"italic",flexGrow:'0',marginLeft:'15px',marginTop:"50px",marginBottom:"35px"}}>
+               <h1 className="h-form">Demande changement groupe</h1>
+            </CardTitle>
             <CardText expand  style={{padding:"0px",margin:"150px",marginTop: "-15px",width:'700px'}}>
-                   <list className="Center"  >
+                   <list  >
             
                     <ListItem> 
                       <Textfield
@@ -53,9 +55,9 @@ export class Form extends Component {
                     <ListItem>
                         <Textfield
                         onChange={() => {}}
-                        label="Pourquoi vous voulez changer le groupe ?..."
+                        label="Pourquoi vous voulez changer de groupe?..."
                         rows={3}
-                        style={{width: '300px'}} />
+                        style={{width: '350px'}} />
                     </ListItem>
                     <ListItem>
                        <Button ClassName ="btn-form" position ="center" raised accent ripple>Envoyer</Button>

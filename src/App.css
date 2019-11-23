@@ -11,8 +11,8 @@ background: linear-gradient(to right, #2E1437, #948E99); /* W3C, IE 10+/ Edge, F
 
 }
 .avatar-img {
-  height: 250px;
-  padding-top: 5em;
+  height: 100px;
+  padding-top: 3em;
 }
 .list-form{
         position: absolute; /* postulat de départ */
@@ -29,11 +29,13 @@ background: linear-gradient(to right, #2E1437, #948E99); /* W3C, IE 10+/ Edge, F
           padding-bottom:2px;
           border-style:inset;
 }
-.Center
-{
-  text-align: center;
-  align-items: center;
+
+.h-form{
+  font-size: 44px;
+  color: #43C6AC;
+  text-shadow: 3px 2px;
+  margin-left: 50px;
+  margin-right: 20px;
 
 }
-
 

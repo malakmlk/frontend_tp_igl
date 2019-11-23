@@ -11,10 +11,10 @@ class App extends Component {
     <Layout>
     <Header className="header-color" title={<Link style={{textDecoration: 'none', color: 'white'}} to="/">MyPortfolio</Link>} scroll>
             <Navigation>
-              <Link to="/About">About</Link>
-              <Link to="/Form">Form</Link>
-              <Link to="/landingPage">landingPage</Link>
-              <Link to="/Note">Note</Link>
+        
+              <Link to="./Form">Form</Link>
+             
+              <Link to="./Note">Note</Link>
             </Navigation>
         </Header>
         <Drawer  >
