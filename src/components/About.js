@@ -10,16 +10,15 @@ class About extends Component {
     render()
     {
         return(
-            <div style={{width: '100%', margin: '0px',marginTop:'0px'}} >
-             <Header className="header-color" title={<Link style={{textDecoration: 'none', color: 'white'}} to="/">MySco</Link>} scroll>
-                  <Navigation>
-                  <Link to="/Form">Form</Link>
-                    <Link to="/SignIn">landingPage</Link>
-                    <Link to="/Note">Note</Link>
-                  
-                  </Navigation>
+            <div style={{width: '100%', margin: '0px',marginTop:'0px',marginLeft:'0px'}} >
+               <Layout fixedHeader>
+               <Header className="header-color" title={<Link style={{textDecoration: 'none', color: 'white'}} to="/">MySco</Link>} scroll>
+                    <Navigation>
+                          <Link to="/Form">Form</Link>
+                          <Link to="/SignIn">landingPage</Link>
+                          <Link to="/Note">Note</Link>
+                    </Navigation>
               </Header>
-              
               <Drawer>
                   <Navigation >
                     <Link to="/Form">Form</Link>
@@ -27,10 +26,14 @@ class About extends Component {
                     <Link to="/Note">Note</Link>
                   </Navigation>
               </Drawer>
+              </Layout>
+              
+            
               <Content >
                   <div className="page-content"  />
                   <main/>
               </Content>
+             
             </div>
         )
 }
