@@ -15,7 +15,7 @@ class About extends Component {
                <Header className="header-color" title={<Link style={{textDecoration: 'none', color: 'white'}} to="/">MySco</Link>} scroll>
                     <Navigation>
                           <Link to="/Form">Form</Link>
-                          <Link to="/SignIn">landingPage</Link>
+                          
                           <Link to="/Note">Note</Link>
                     </Navigation>
               </Header>

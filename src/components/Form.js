@@ -21,23 +21,23 @@ export class Form extends Component {
 
          };
   }
-  myChangeHandler = (event) => {
-    let nam = event.target.name;
-    let val = event.target.value;
-    this.setState({[nam]: val});
-    console.log(this.state.username);
+      myChangeHandler = (event) => {
+        let nam = event.target.name;
+        let val = event.target.value;
+        this.setState({[nam]: val});
+        console.log(this.state.username);
 
-    }
-    mySubmitHandler = (event) => {
-     
-      if ((this.state.matricule=='')|(this.state.grpvoulu=='')) {
-        alert("please fill out all the following form");
-      }
-      else{
-        event.preventDefault();
-        alert("You are submitting " + this.state.username);
-      }
-    }
+        }
+        mySubmitHandler = (event) => {
+        
+          if ((this.state.matricule=='')|(this.state.grpvoulu=='')) {
+            alert("please fill out all the following form");
+          }
+          else{
+            event.preventDefault();
+            alert("You are submitting " + this.state.username);
+          }
+        }
 
 
   render() {
