@@ -57,14 +57,16 @@ onChangeModule(e) {
 onSubmit(e) {
     e.preventDefault();
     const obj = {
-        todo_description: this.state.todo_description,
-        todo_responsible: this.state.todo_responsible,
-        todo_priority: this.state.todo_priority,
-        todo_completed: this.state.todo_completed
+        CF: this.state.CF,
+        CI: this.state.CI,
+        CC: this.state.CC,
+        moyenne: this.state.moyenne,
+        module: this.state.module,
+
     };
-    console.log(obj);
+  /*  console.log(obj);
     axios.post('http://localhost:4000/todos/update/'+this.props.match.params.id, obj)
-        .then(res => console.log(res.data));
+        .then(res => console.log(res.data));*/
     
     this.props.history.push('/');
 }
@@ -78,7 +80,7 @@ render() {
                     <label>Description: </label>
                     <input  type="text"
                             className="form-control"
-                            value={this.state.todo_description}
+                            value={this.state.CF}
                             onChange={this.onChangeCF}
                             />
                 </div>
@@ -87,7 +89,7 @@ render() {
                     <input 
                             type="text" 
                             className="form-control"
-                            value={this.state.todo_responsible}
+                            value={this.state.CI}
                             onChange={this.onChangeCI}
                             />
                 </div>
@@ -98,7 +100,7 @@ render() {
                                 name="priorityOptions" 
                                 id="priorityLow" 
                                 value="Low"
-                                checked={this.state.todo_priority==='Low'} 
+                                checked={this.state.CC==='Low'} 
                                 onChange={this.onChangeCC}
                                 />
                         <label className="form-check-label">Low</label>
@@ -109,7 +111,7 @@ render() {
                                 name="priorityOptions" 
                                 id="priorityMedium" 
                                 value="Medium" 
-                                checked={this.state.todo_priority==='Medium'} 
+                                checked={this.state.CC==='Medium'} 
                                 onChange={this.onChangeCC}
                                 />
                         <label className="form-check-label">Medium</label>
@@ -120,7 +122,7 @@ render() {
                                 name="priorityOptions" 
                                 id="priorityHigh" 
                                 value="High" 
-                                checked={this.state.todo_priority==='High'} 
+                                checked={this.state.CC==='High'} 
                                 onChange={this.onChangeCC}
                                 />
                         <label className="form-check-label">High</label>
