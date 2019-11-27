@@ -1,126 +1,163 @@
-import React, { Component} from 'react'
-import { Card,CardText,CardTitle, Textfield,ListItem,Button } from 'react-mdl';
-import { Drawer } from '@material-ui/core';
+import React, { Component } from 'react';
+import axios from 'axios';
 import About from './About';
+import {Card,ListItem,Button,CardTitle,Textfield,CardText} from  'react-mdl';
 
 
+export default class CreateTodo extends Component {
+    constructor(props) {
+        super(props);
 
-
-export class Form extends Component {
-
-  constructor(props) 
-  {
-    super(props);
-    this.state = 
-          { username: '',
-            matricule:'',
-            grpActuel:'',
-            grpvoulu:'',
-            cause:'',
+        this.state = {
+            matricule: '',
             promo:'',
-
-         };
-  }
-      myChangeHandler = (event) => {
-        let nam = event.target.name;
-        let val = event.target.value;
-        this.setState({[nam]: val});
-        console.log(this.state.username);
-
+            groupeactuel: '',
+            groupevoulu: '',
+            raison: '',
+            valide:false
         }
-        mySubmitHandler = (event) => {
+
+        this.onChangeMatricule = this.onChangeMatricule.bind(this);
+        this.onChangegroupeactuel = this.onChangegroupeactuel.bind(this);
+        this.onChangegroupevoulu = this.onChangegroupevoulu.bind(this);
+        this.onChangeraison = this.onChangeraison.bind(this);
+        this.onChangepromo = this.onChangepromo.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+    onChangeMatricule(e) {
+        this.setState({
+        matricule: e.target.value
+        });
+    }
+    onChangepromo(e) {
+        this.setState({
+        promo: e.target.value
+        });
+    }
+
+    onChangegroupeactuel(e) {
+        this.setState({
+            groupeactuel: e.target.value
+        });
+    }
+
+    onChangegroupevoulu(e) {
+        this.setState({
+            groupevoulu: e.target.value
+        });
+    }
+    onChangeraison(e) {
+        this.setState({
+            raison: e.target.value
+        });
+    }
+    onSubmit(e) {
+        e.preventDefault();
         
-          if ((this.state.matricule=='')|(this.state.grpvoulu=='')) {
-            alert("please fill out all the following form");
-          }
-          else{
-            event.preventDefault();
-            alert("You are submitting " + this.state.username);
-          }
-        }
+        console.log(`Form submitted:`);
+        console.log(`Todo Description: ${this.state.matricule}`);
+        console.log(`Todo Responsible: ${this.state.groupeactuel}`);
+        console.log(`Todo Priority: ${this.state.groupevoulu}`);
+        const newTodo = {
+            matricule: this.state.matricule,
+            groupeactuel: this.state.groupeactuel,
+            groupevoulu: this.state.groupevoulu,
+            promo: this.state.promo,
+            raison:this.state.raison,
+            valide:false
+        };
 
+        axios.post('http://localhost:3000/groupe', newTodo)
+            .then(res => console.log(res.data));
+        this.setState({
+            matricule: '',
+            groupeactuel: '',
+            groupevoulu: '',
+            promo:'',
+            valide:false,
+            raison:''
+        })
+    }
+    render() {
+        return (
+            <layout>
+            <About></About>
+      
+            <div  className="list-form" style={{marginTop:'50px'}} >
+              <layout > 
+                <Card shadow={10} style={{width: '700px', height: '990px',pandding:"10",marginTop:'450px',marginBottom:'90px'}}>
+                  <CardTitle  expand style={{textDecoration: 'double', padding:"0px",textDecorationStyle:"italic",flexGrow:'0',marginLeft:'15px',marginTop:"50px",marginBottom:"35px"}}>
+                     <h1 className="h-form">Demande changement groupe</h1>
+                  </CardTitle>
+                  <CardText expand  style={{padding:"0px",margin:"150px",marginTop: "-15px",width:'700px'}}>
+                         <form onSubmit={this.onSubmit}>
+                         <list>                        
+                          <ListItem>
+                            <Textfield                          
+                              label="Matricule..."
+                              value={this.state.matricule}
+                              onChange={this.onChangeMatricule}
+                              floatingLabel
+                              style={{width: '300px'}}/>
+                          </ListItem>
+                         
+                         
+                         
+                          <ListItem>
+                          <Textfield
+                                    value={this.state.promo}
+                                    onChange={this.onChangepromo}
+                                    label="Promo..."
+                                    floatingLabel
+                                    style={{width: '300px'}}
+                                />
+                          </ListItem>
+                         
+                          
+                         
+                          <ListItem>
+                            <Textfield                           
+                              label="Groupe Actuel..."
+                              value={this.state.groupeactuel}
+                              onChange={this.onChangegroupeactuel}
+                              floatingLabel
+                              style={{width: '300px'}}/>
+                          </ListItem>
 
-  render() {
-    return (
-      <layout>
-      <About></About>
+                          <ListItem>
+                            <Textfield
+                              
+                              label="Groupe voulu..."
+                              value={this.state.groupevoulu}
+                              onChange={this.onChangegroupevoulu}
+                              floatingLabel
+                              style={{width: '300px'}}/>
+                          </ListItem>
 
-      <form onSubmit={this.mySubmitHandler} className="list-form" style={{marginTop:'50px'}} >
-        <layout >
+                          
 
-          <Card shadow={10} style={{width: '700px', height: '990px',pandding:"10",marginTop:'450px',marginBottom:'90px'}}>
-            <CardTitle  expand style={{textDecoration: 'double', padding:"0px",marginLeft:"0px",textDecorationStyle:"italic",flexGrow:'0',marginLeft:'15px',marginTop:"50px",marginBottom:"35px"}}>
-               <h1 className="h-form">Demande changement groupe</h1>
-            </CardTitle>
-            <CardText expand  style={{padding:"0px",margin:"150px",marginTop: "-15px",width:'700px'}}>
-                   <list  >
-            
-                    <ListItem> 
-                      <Textfield
-                        onChange={this.myChangeHandler}
-                        label="UserName..."
-                        name='username'
-                        floatingLabel
-                        style={{width: '300px'}}/>
-                    </ListItem>
-                    <ListItem>
-                      <Textfield
-                        onChange={this.myChangeHandler}
-                        label="Matricule..."
-                        name='matricule'
-                        floatingLabel
-                        style={{width: '300px'}}/>
-                    </ListItem>
-                    <ListItem>
-                    <label>
-                      Promo   :
-                      <select>
-                        <option >L1</option>
-                        <option value="lime">L2</option>
-                        <option selected value="coconut">L3</option>
-                        <option value="mango">M1</option>
-                        <option value="mango">M2</option>
-                        
-                      </select>
-                    </label>
-                    </ListItem>
-                    <ListItem>
-                      <Textfield
-                       onChange={this.myChangeHandler}
-                        label="Groupe Actuel..."
-                        name='grpActuel'
-                        floatingLabel
-                        style={{width: '300px'}}/>
-                    </ListItem>
-                    <ListItem>
-                      <Textfield
-                        onChange={this.myChangeHandler}
-                        label="Groupe voulu..."
-                        name='grpvoulu'
-                        floatingLabel
-                        style={{width: '300px'}}/>
-                    </ListItem>
-                    <ListItem>
-                        <Textfield id='use'
-                        onChange={this.myChangeHandler}
-                        label="Pourquoi vous voulez changer de groupe?..."
-                        name='cause'
-                        rows={3}
-                        style={{width: '350px'}} />
-                    </ListItem>
-                    <ListItem>
-                       <Button  onSubmit={this.mySubmitHandler} ClassName ="btn-form" position ="center" raised accent ripple type='submit' >Envoyer</Button>
+                          <ListItem>
+                              <Textfield id='use'                         
+                              label="Pourquoi vous voulez changer de groupe?..."
+                              value={this.state.raison}
+                              onChange={this.onChangeraison}
+                              rows={3}
+                              style={{width: '350px'}} />
+                          </ListItem>
 
-                   </ListItem>
-                   </list>
-             </CardText>
-            
-          </Card>
-          </layout>
-      </form>
-      </layout>
-    )
-  }
+                          <ListItem>
+                             <Button  type='submit' ClassName ="btn-form" position ="center" raised accent ripple type='submit' >Envoyer</Button>
+      
+                         </ListItem>
+
+                         </list>
+                         </form>
+                   </CardText>
+                  
+                </Card>
+              </layout>
+            </div>
+            </layout>
+        )
+    }
 }
-
-export default Form;
