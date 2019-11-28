@@ -8,6 +8,9 @@
 import React, { Component } from 'react';
 import About from './About';
 import axios from 'axios';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+import Container from '@material-ui/core/Container';
 
 const Note = props => (
     <tr>
@@ -15,7 +18,7 @@ const Note = props => (
         <td>{props.note.cf}</td>
         <td>{props.note.ci}</td>
         <td>{props.note.moyenne}</td>
-        <td>{props.note.matricule}</td>
+       
         <td>{props.note.module}</td>
         
     </tr>
@@ -29,7 +32,7 @@ export default class notesList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/note')
+        axios.get('http://localhost:3000/note/coucou')
             .then(response => {
                 this.setState({ note: response.data });
             })
@@ -40,7 +43,7 @@ export default class notesList extends Component {
 
     noteList() {
         return this.state.note.map(function(currentnote, i){
-            return <note note={currentnote} key={i} />;
+            return <Note note={currentnote} key={i} />;
         })
     }
 
@@ -49,24 +52,30 @@ export default class notesList extends Component {
             
             <layout>
                 <About></About>
-                <div marginTop ='700px'>
-                <h3>notes List</h3>
-                <table className="table table-striped" style={{ marginTop: 20 }} >
-                    <thead>
-                        <tr>
-                            <th>cc</th>
-                            <th>CF</th>
-                            <th>CI</th>
-                            <th>Module</th>
-                            <th>Matricule</th>
-                            <th>Moyenne</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { this.noteList() }
-                    </tbody>
-                </table>
-                </div>
+                <React.Fragment>
+                 <CssBaseline />
+                     <Container >  
+
+                                <div style={{marginTop:"70px"}}>
+                                <h3 >Liste notes</h3>
+                                <table className="table table-striped" style={{ marginTop: 20 }} >
+                                    <thead>
+                                        <tr>
+                                            <th>cc</th>
+                                            <th>CF</th>
+                                            <th>CI</th>
+                                            <th>Module</th>
+                                            
+                                            <th>Moyenne</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        { this.noteList() }
+                                    </tbody>
+                                </table>
+                                </div>
+                     </Container>
+                  </React.Fragment>
             </layout>
         )
     }
