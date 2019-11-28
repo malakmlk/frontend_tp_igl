@@ -10,7 +10,7 @@ class About extends Component {
     render()
     {
         return(
-            <div style={{width: '100%', margin: '0px',marginTop:'0px',marginLeft:'0px'}} >
+            <div style={{width: '100%', margin: '0px',marginTop:'0px',marginLeft:'0px',marginRight:'0px'}} >
                <Layout fixedHeader>
                <Header className="header-color" title={<Link style={{textDecoration: 'none', color: 'white'}} to="/">MySco</Link>} scroll>
                     <Navigation>
