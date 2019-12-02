@@ -80,8 +80,8 @@ export default class CreateTodo extends Component {
     }
     render() {
         return (
-            <layout>
-            <About></About>
+            <layout >
+            <About width='100%'></About>
       
             <div  className="list-form" style={{marginTop:'50px'}} >
               <layout > 

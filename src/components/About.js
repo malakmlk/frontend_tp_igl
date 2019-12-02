@@ -22,7 +22,7 @@ class About extends Component {
               <Drawer>
                   <Navigation >
                     <Link to="/Form">Form</Link>
-                    <Link to="/SignIn">landingPage</Link>
+                    
                     <Link to="/Note">Note</Link>
                   </Navigation>
               </Drawer>
