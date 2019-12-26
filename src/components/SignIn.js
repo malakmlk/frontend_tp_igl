@@ -63,7 +63,7 @@ export default function SignIn() {
               return (
               
                 <layout>
-                <Header className="header-color" title={<Link style={{textDecoration: 'none', color: 'white'}} to="/">MySco</Link>} scroll>
+                <Header className="header-color" title={<Link style={{textDecoration: 'none', color: 'white'}} to="/">Myschool</Link>} scroll>
                   
                   
                  </Header>
@@ -101,13 +101,14 @@ export default function SignIn() {
                       <Link to="./Note">
                            <Button
                               type="submit"
+                              id="submit"
                               fullWidth
                               variant="contained"
                               color="primary"
                               className={classes.submit}
                               
                              > Sign In
-                      </Button>
+                           </Button>
                       </Link>
                     </form>
                   </div>
