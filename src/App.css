@@ -10,9 +10,10 @@ background: -webkit-linear-gradient(to right, #2E1437, #948E99);  /* Chrome 10-2
 background: linear-gradient(to right, #2E1437, #948E99); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
-.avatar-img {
-  height: 100px;
+.illustration {
+  height: 500px;
   padding-top: 3em;
+  line-height: 600px;
 }
 .list-form{
         position: absolute; /* postulat de départ */

@@ -4,7 +4,7 @@ import About from './About';
 import {Card,ListItem,Button,CardTitle,Textfield,CardText} from  'react-mdl';
 
 
-export default class CreateTodo extends Component {
+export default class Form extends Component {
     constructor(props) {
         super(props);
 
@@ -55,9 +55,7 @@ export default class CreateTodo extends Component {
         e.preventDefault();
         
         console.log(`Form submitted:`);
-        console.log(`Todo Description: ${this.state.matricule}`);
-        console.log(`Todo Responsible: ${this.state.groupeactuel}`);
-        console.log(`Todo Priority: ${this.state.groupevoulu}`);
+        
         const newTodo = {
             matricule: this.state.matricule,
             groupeactuel: this.state.groupeactuel,
@@ -150,7 +148,7 @@ export default class CreateTodo extends Component {
                           </ListItem>
 
                           <ListItem>
-                             <Button  id='send' type='submit' ClassName ="btn-form" position ="center" raised accent ripple type='submit' >Envoyer</Button>
+                             <Button  id='send'type='submit' ClassName ="btn-form" position ="center" raised accent ripple type='submit' >Envoyer</Button>
       
                          </ListItem>
 

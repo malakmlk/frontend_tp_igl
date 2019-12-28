@@ -98,7 +98,7 @@ export default function SignIn() {
                         id="password"
                         autoComplete="current-password"
                       />
-                      <Link to="./Note">
+                      <Link to="./AboutUs">
                            <Button
                               type="submit"
                               id="submit"

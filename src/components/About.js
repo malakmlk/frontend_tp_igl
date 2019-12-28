@@ -16,7 +16,7 @@ class About extends Component {
                     <Navigation>
                           <Link to="/Form" id="Formu" >Form</Link>
                           
-                          <Link to="/Note">Note</Link>
+                          <Link to="/Note"id ="Note">Note</Link>
                     </Navigation>
               </Header>
               <Drawer>
