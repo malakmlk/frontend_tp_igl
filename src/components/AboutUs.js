@@ -19,7 +19,7 @@ export default class AboutUs extends Component {
                     </Grid>
                     <Grid className="demo-grid-1">
                         <Cell col={4}>AboutUs</Cell>
-                        <Cell className="illustration" col={4}><img    src={Image}/></Cell>
+                        <Cell className="illustration" col={4}></Cell>
                         
                     </Grid>
                     
