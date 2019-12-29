@@ -56,7 +56,7 @@ export default class Form extends Component {
         
         console.log(`Form submitted:`);
         
-        const newTodo = {
+        const form = {
             matricule: this.state.matricule,
             groupeactuel: this.state.groupeactuel,
             groupevoulu: this.state.groupevoulu,
@@ -64,8 +64,10 @@ export default class Form extends Component {
             raison:this.state.raison,
             valide:false
         };
+        if (((form.promo =='')|(form.groupeactuel=='')|(form.groupevoulu=='')|(form.matricule=='')|(form.raison==''))){alert("vous devez remplir tous les champs !!");}
+        else{
 
-        axios.post('http://localhost:3000/groupe', newTodo)
+        axios.post('http://localhost:3000/groupe', form)
             .then(res => console.log(res.data));
         this.setState({
             matricule: '',
@@ -75,6 +77,9 @@ export default class Form extends Component {
             valide:false,
             raison:''
         })
+        alert("Votre demande est prise en charge!!");
+        }
+
     }
     render() {
         return (

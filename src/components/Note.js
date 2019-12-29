@@ -32,7 +32,7 @@ export default class notesList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/note/malak')
+        axios.get('http://localhost:1234/note/malak')
             .then(response => {
                 this.setState({ note: response.data });
             })
